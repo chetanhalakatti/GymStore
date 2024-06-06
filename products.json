@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Creatine",
+    "price": 100,
+    "image": "./media/61ZW81nrUgL.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Vitamin D",
+    "price": 200,
+    "image": "./media/vitamin d.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Mass Gainer",
+    "price": 300,
+    "image": "./media/mass gainer.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Multivitamin",
+    "price": 400,
+    "image": "./media/download (1).jpg"
+  },
+  {
+    "id": 5,
+    "name": "Omaga 3",
+    "price": 500,
+    "image": "./media/omega 3.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Fish oil",
+    "price": 600,
+    "image": "./media/download (2).jpg"
+  },
+  {
+    "id": 7,
+    "name": "Whey Protein",
+    "price": 700,
+    "image": "/media/65deff6c8e138b303f2f0b84-optimum-nutrition-gold-standard-100.jpg"
+  },
+  {
+    "id": 8,
+    "name": "NAME 08",
+    "price": 800,
+    "image": "./media/vitamin d.jpg",
+    "dec": "One of the few supplements with strong scientific evidence to support its effectiveness. It helps your muscles produce more energy    during high-intensity exercise, which can lead to improved strength, power, and muscle mass."
+  }
+
+]

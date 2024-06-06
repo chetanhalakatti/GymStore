@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GymStore</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <!-- <script src="https://kit.fontawesome.com/27b8fa0510.js" crossorigin="anonymous"></script> -->
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <!-- <nav class="navbar">
+      <div class="navbar-brand">
+        <a class="nav-link" href="/index.html">GymStore</a>
+      </div>
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="products/protein.html">Products</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+      </ul>
+      <form class="search-form">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button type="submit" class="search-button">Search</button>
+      </form>
+      <a href="/products/cart/cart.html">
+        <button data-quantity="0" class="btn-cart">
+          <svg
+            class="icon-cart"
+            viewBox="0 0 24.38 30.52"
+            height="30.52"
+            width="24.38"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>icon-cart</title>
+            <path
+              transform="translate(-3.62 -0.85)"
+              d="M28,27.3,26.24,7.51a.75.75,0,0,0-.76-.69h-3.7a6,6,0,0,0-12,0H6.13a.76.76,0,0,0-.76.69L3.62,27.3v.07a4.29,4.29,0,0,0,4.52,4H23.48a4.29,4.29,0,0,0,4.52-4ZM15.81,2.37a4.47,4.47,0,0,1,4.46,4.45H11.35a4.47,4.47,0,0,1,4.46-4.45Zm7.67,27.48H8.13a2.79,2.79,0,0,1-3-2.45L6.83,8.34h3V11a.76.76,0,0,0,1.52,0V8.34h8.92V11a.76.76,0,0,0,1.52,0V8.34h3L26.48,27.4a2.79,2.79,0,0,1-3,2.44Zm0,0"
+            ></path>
+          </svg>
+          <span class="quantity"></span>
+        </button>
+      </a>
+      <button class="login-button" onclick="openModal()">Login/SignUp</button>
+    </nav> -->
+
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="index.html" id="Title-name">GymStore</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="#"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="about/about.html">About</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link text-white" href="/products/protein.html">All Product</a>
+            </li> -->
+            <!-- <li class="nav-item dropdown"> -->
+              <!-- <a
+                class="nav-link dropdown-toggle text-white"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a> -->
+              <!-- <ul class="dropdown-menu">
+                <li><a class="dropdown-item text-white" href="#">Action</a></li>
+                <li>
+                  <a class="dropdown-item text-white" href="#"
+                    >Another action</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item text-white" href="#"
+                    >Something else here</a
+                  >
+                </li>
+              </ul> -->
+           
+            <!-- <li class="nav-item">
+              <a class="nav-link disabled text-white" aria-disabled="true"
+                >Disabled</a
+              >
+            </li> -->
+          </ul>
+            <!-- <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button
+                class="btn btn-outline-success text-white mx-2"
+                type="submit"
+              >
+                Search
+              </button>
+            </form> -->
+          <button
+            class="btn btn-outline-success text-white login-button"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            id="headerLoginBtn"
+          >
+            Login
+          </button>
+          <button
+            class="btn btn-outline-success text-white loginOut-button"
+            id="headerLogOutBtn"
+            style="display: none"
+          >
+            LoginOut
+          </button>
+          <div id="toggleSidebar" style="display: flex; cursor: pointer">
+            <svg
+              class="w-[40px] h-[40px] text-red-600 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="yellow"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.6"
+                d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
+              />
+            </svg>
+            <span class="AddCartConter">0</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!--Main Content Section -->
+    <!-- <section id="main-content">
+      <div class="container">
+        <h1>Our Products</h1>
+        <div class="product-category">
+          <ul class="navbar-navs">
+            <li class="nav-items">
+              <a class="nav-link" href="products/protein.html">Protein </a>
+            </li>
+            <li class="nav-items"><a class="nav-link" href="#">Gainers </a></li>
+            <li class="nav-items"><a class="nav-link" href="#">BCAA </a></li>
+            <li class="nav-items">
+              <a class="nav-link" href="#">Creaiten </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>-->
+
+    <!-- Image Slider -->
+    <div class="slider" id="slider">
+      <div class="slides">
+        <div class="slide">
+          <img src="media/61ZW81nrUgL.jpg" alt="Product 1"  />
+        </div>
+        <div class="slide">
+          <img src="media/65deff6c8e138b303f2f0b84-optimum-nutrition-gold-standard-100.jpg" alt="Product 2" />
+        </div>
+        <div class="slide">
+          <img src="media/download (2).jpg" alt="Product 3" />
+        </div>
+      </div>
+      <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+      <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <!-- Product Section -->
+    <section id="product_section">
+      <div id="listProduct" class="listProduct">
+        <div class="item">
+          <img src="./media/61ZW81nrUgL.jpg" alt="" />
+          <h2>NAME PRODUCT</h2> 
+          <div class="price">$200</div>
+          <button class="addCart">Add to Cart</button>
+        </div>
+      </div>
+      <!-- onclick buyNowPopup -->
+      <div class="sidebar" id="sidebar">
+        <h2 style="margin-top: 50px">Shopping Cart</h2>
+        <div class="listCart"></div>
+        <div class="sidebarBtn">
+          <button
+            class="btn btn-outline-success sidebarClose mx-2"
+            id="sidebarClose"
+          >
+            CLOSE
+          </button>
+          <button class="btn btn-outline-success checkOut" id="checkOutBtn">
+            Check Out
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- login form -->
+    <!-- <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <form id="loginForm">
+          <h2>login</h2>
+          <div class="form-group">
+            <label for="loginEmail">Email address</label>
+            <input type="email" id="loginEmail" placeholder="Enter email" />
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" placeholder="Password" />
+          </div>
+          <p onclick="openRegisterModal()">already have accont? signin here</p>
+          <button id="loginBtn" type="button" class="btn-signup">
+            Sign Up
+          </button>
+        </form>
+      </div>
+    </div> -->
+
+    <!-- register from -->
+    <!-- <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeRegisterModal()">&times;</span>
+        <form id="registerForm">
+          <h2>Register</h2>
+          <div class="form-group">
+            <label for="reg_email">Email address</label>
+            <input type="email" id="reg_email" placeholder="Enter email" />
+          </div>
+          <div class="form-group">
+            <label for="reg_password">Password</label>
+            <input type="password" id="reg_password" placeholder="Password" />
+          </div>
+          <button id="regSubmitBtn" type="submit" class="btn-register">
+            login
+          </button>
+        </form>
+      </div>
+    </div> -->
+
+    <!-- Modal login and register -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+      style="display: none"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- login form  -->
+            <form id="loginForm">
+              <h2>login</h2>
+              <div class="form-group">
+                <label for="loginEmail">Email address</label>
+                <input type="email" id="loginEmail" placeholder="Enter email" />
+              </div>
+              <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input
+                  type="password"
+                  id="loginPassword"
+                  placeholder="Password"
+                />
+              </div>
+              <p onclick="openRegisterModal()">
+                already have accont? signin here
+              </p>
+              <button id="loginBtn" type="button" class="btn-signup">
+                Sign Up
+              </button>
+            </form>
+            <!-- register form -->
+            <form id="registerForm" style="display: none">
+              <h2>Register</h2>
+              <div class="form-group">
+                <label for="reg_email">Email address</label>
+                <input type="email" id="reg_email" placeholder="Enter email" />
+              </div>
+              <div class="form-group">
+                <label for="reg_password">Password</label>
+                <input
+                  type="password"
+                  id="reg_password"
+                  placeholder="Password"
+                />
+              </div>
+              <button id="regSubmitBtn" type="submit" class="btn-register">
+                resgister
+              </button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <ul class="footer-content">
+        <li>Phone: 8792220503</li>
+        <li>Email: chetanhalakatti879@gmail.com</li>
+      </ul>
+      <div class="social-media">
+        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24H12.82V14.708h-3.27v-3.624h3.27V8.418c0-3.231 1.967-4.998 4.84-4.998 1.377 0 2.562.102 2.906.148v3.373l-1.996.001c-1.564 0-1.866.743-1.866 1.832v2.404h3.728l-.486 3.624h-3.242V24h6.353c.73 0 1.323-.593 1.323-1.324V1.325C24 .593 23.406 0 22.675 0z"/>
+          </svg>
+        </a>
+        <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23.954 4.569c-.885.385-1.83.645-2.825.765a4.932 4.932 0 0 0 2.163-2.723c-.951.555-2.005.96-3.127 1.177a4.916 4.916 0 0 0-8.384 4.482C7.69 8.095 4.064 6.13 1.64 3.161a4.822 4.822 0 0 0-.666 2.475c0 1.71.87 3.215 2.19 4.096a4.904 4.904 0 0 1-2.228-.616v.061a4.923 4.923 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.212.084 4.93 4.93 0 0 0 4.604 3.419 9.868 9.868 0 0 1-6.102 2.104c-.397 0-.788-.023-1.17-.068A13.94 13.94 0 0 0 7.548 21c9.058 0 14.009-7.498 14.009-14.01 0-.213-.004-.425-.014-.636a9.936 9.936 0 0 0 2.45-2.536l-.035-.016z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.206.056 1.877.243 2.315.407a4.602 4.602 0 0 1 1.675.937 4.602 4.602 0 0 1 .938 1.675c.164.438.351 1.109.407 2.315.058 1.266.07 1.645.07 4.85s-.012 3.584-.07 4.85c-.056 1.206-.243 1.877-.407 2.315a4.602 4.602 0 0 1-.937 1.675 4.602 4.602 0 0 1-1.675.938c-.438.164-1.109.351-2.315.407-1.266.058-1.645.07-4.85.07s-3.584-.012-4.85-.07c-1.206-.056-1.877-.243-2.315-.407a4.602 4.602 0 0 1-1.675-.937 4.602 4.602 0 0 1-.938-1.675c-.164-.438-.351-1.109-.407-2.315-.058-1.266-.07-1.645-.07-4.85s.012-3.584.07-4.85c.056-1.206.243-1.877.407-2.315a4.602 4.602 0 0 1 .937-1.675 4.602 4.602 0 0 1 1.675-.938c.438-.164 1.109-.351 2.315-.407 1.266-.058 1.645-.07 4.85-.07zm0-2.163C8.756 0 8.332.013 7.053.072 5.77.13 4.85.323 4.067.598 3.28.874 2.623 1.298 2.011 1.91.399 3.522-.025 4.179.248 4.966.523 5.75.716 6.67.774 7.953c.059 1.279.072 1.703.072 4.047s-.013 2.769-.072 4.047c-.058 1.283-.251 2.203-.526 2.987-.273.788-.697 1.445-1.31 2.057-.613.612-1.27 1.036-2.058 1.309-.784.275-1.704.468-2.986.526-1.279.059-1.703.072-4.047.072s-2.769-.013-4.047-.072c-1.283-.058-2.203-.251-2.987-.526-.788-.273-1.445-.697-2.057-1.31-.612-.613-1.036-1.27-1.309-2.058-.275-.784-.468-1.704-.526-2.986C.013 15.724 0 15.3 0 12s.013-2.769.072-4.047c.058-1.283.251-2.203.526-2.987.273-.788.697-1.445 1.31-2.057.613-.612 1.27-1.036 2.058-1.309.784-.275 1.704-.468 2.986-.526C8.332.013 8.756 0 12 0zM12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-10.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/>
+          </svg>
+        </a>
+      </div>
+    </footer>
+    <script src="js/scripts.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="src/index.js"></script>
+    <script type="module" src="./js/firebaseauth.js"></script>
+  </body>
+</html>
