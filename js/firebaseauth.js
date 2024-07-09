@@ -39,6 +39,7 @@ regSubmitBtn.addEventListener("click", (event) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.log(errorMessage);
+      alert("surver error");
       // ..
     });
 });
@@ -59,6 +60,7 @@ loginBtn.addEventListener("click", () => {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.log(errorMessage);
+      alert("surver error");
     });
 });
 
@@ -84,5 +86,6 @@ logOut.addEventListener("click", function () {
     })
     .catch((error) => {
       console.error("Error signing out:", error);
+      alert("surver error");
     });
 });
